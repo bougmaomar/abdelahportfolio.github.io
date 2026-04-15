@@ -20,18 +20,32 @@
 
     <nav>
         <div class="logo">BOUGMA</div>
-        <div class="nav-links">
-            <a href="#accueil">Accueil</a>
-            <a href="#demarche">Démarche</a>
-            <a href="#galerie">Galerie</a>
-            <a href="#contact">Contact</a>
+        <div class="nav-links" id="nav-links">
+            <a href="#accueil" onclick="closeMenu()">Accueil</a>
+            <a href="#demarche" onclick="closeMenu()">Démarche</a>
+            <a href="#galerie" onclick="closeMenu()">Galerie</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+    <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
 
     <header id="accueil" class="hero">
-        <h1 class="hero-name" data-reveal>Abdellah<br>Bougma</h1>
-        <p class="hero-tagline" data-reveal>« La couleur devient vivante, le métal trouve une nouvelle respiration... je
-            façonne une vision. »</p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-name" data-reveal>Abdellah<br>Bougma</h1>
+                <p class="hero-tagline" data-reveal>« La couleur devient vivante, le métal trouve une nouvelle respiration... je
+                    façonne une vision. »</p>
+            </div>
+            <div class="hero-image" data-reveal>
+                <img src="WhatsApp Image 2026-02-18 at 14.41.04 (1).jpeg" alt="Œuvre d'Abdellah Bougma">
+                <div class="hero-image-frame"></div>
+            </div>
+        </div>
     </header>
 
     <section id="demarche" class="about">
@@ -41,21 +55,21 @@
                 <p>Artiste peintre contemporain confirmé, spécialisé dans la <span class="highlight">technique
                         mixte</span>, je développe une écriture visuelle singulière inspirée du <span
                         class="highlight">patrimoine arabo-amazigh</span> et des symboliques traditionnelles.</p>
-                <p>Mon travail explore la mémoire, l’identité et la matière à travers une approche expressive et
+                <p>Mon travail explore la mémoire, l'identité et la matière à travers une approche expressive et
                     semi-abstraite, où textures, superpositions et rythmes décoratifs dialoguent avec une sensibilité
                     contemporaine.</p>
-                <p>Dans mon atelier, je dialogue avec la matière. Chaque geste est une recherche d’équilibre entre
+                <p>Dans mon atelier, je dialogue avec la matière. Chaque geste est une recherche d'équilibre entre
                     héritage et modernité, entre spontanéité et maîtrise.</p>
             </div>
             <div class="about-text" data-reveal>
                 <p>Je navigue entre peinture, sculpture et techniques mixtes, explorant les textures, les volumes et les
                     symboles. Les objets ordinaires se métamorphosent en formes porteuses de mémoire.</p>
-                <p>Inscrit dans une démarche cohérente et évolutive, je conçois des séries d’œuvres qui interrogent la
+                <p>Inscrit dans une démarche cohérente et évolutive, je conçois des séries d'œuvres qui interrogent la
                     relation entre héritage culturel et expression personnelle, tout en affirmant une signature
                     artistique reconnaissable.</p>
                 <p
                     style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-indigo); padding-top: 1rem;">
-                    <i>"Chaque œuvre est le prolongement d’une réflexion intime et culturelle."</i>
+                    <i>«&nbsp;Chaque œuvre est le prolongement d'une réflexion intime et culturelle.&nbsp;»</i>
                 </p>
             </div>
         </div>
@@ -64,6 +78,7 @@
     <section id="galerie" class="gallery">
         <h2 class="section-title" data-reveal>Galerie d'Œuvres</h2>
         <div class="gallery-grid">
+            <!-- Original gallery cards -->
             <div class="artwork-card" data-reveal>
                 <img src="WhatsApp Image 2026-02-18 at 14.41.01.jpeg" alt="Abdellah Bougma - Technique Mixte 1">
                 <div class="artwork-info">
@@ -104,6 +119,42 @@
                 <div class="artwork-info">
                     <span class="artwork-title">L'Atelier</span>
                     <span class="artwork-tag">Processus</span>
+                </div>
+            </div>
+            <!-- Former showcase images added to gallery -->
+            <div class="artwork-card" data-reveal>
+                <img src="WhatsApp Image 2026-02-18 at 14.41.06 (2).jpeg" alt="Abdellah Bougma - Œuvre">
+                <div class="artwork-info">
+                    <span class="artwork-title">Rythmes &amp; Textures</span>
+                    <span class="artwork-tag">Mixte</span>
+                </div>
+            </div>
+            <div class="artwork-card" data-reveal>
+                <img src="WhatsApp Image 2026-02-18 at 14.41.05.jpeg" alt="Abdellah Bougma - Œuvre">
+                <div class="artwork-info">
+                    <span class="artwork-title">Mémoire des Formes</span>
+                    <span class="artwork-tag">Abstrait</span>
+                </div>
+            </div>
+            <div class="artwork-card" data-reveal>
+                <img src="WhatsApp Image 2026-02-18 at 14.41.04.jpeg" alt="Abdellah Bougma - Œuvre">
+                <div class="artwork-info">
+                    <span class="artwork-title">Écriture Visuelle</span>
+                    <span class="artwork-tag">Patrimoine</span>
+                </div>
+            </div>
+            <div class="artwork-card" data-reveal>
+                <img src="WhatsApp Image 2026-02-18 at 14.57.01 (2).jpeg" alt="Abdellah Bougma - Œuvre">
+                <div class="artwork-info">
+                    <span class="artwork-title">Traces &amp; Signes</span>
+                    <span class="artwork-tag">Identité</span>
+                </div>
+            </div>
+            <div class="artwork-card" data-reveal>
+                <img src="WhatsApp Image 2026-02-18 at 14.41.06.jpeg" alt="Abdellah Bougma - Œuvre">
+                <div class="artwork-info">
+                    <span class="artwork-title">Dialogue des Matières</span>
+                    <span class="artwork-tag">Sculpture</span>
                 </div>
             </div>
         </div>
@@ -152,6 +203,7 @@
     </section>
 
     <script>
+        // Intersection Observer for reveal animations
         const revealElements = document.querySelectorAll('[data-reveal]');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -163,6 +215,29 @@
         }, { threshold: 0.1 });
 
         revealElements.forEach(el => revealObserver.observe(el));
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            const hamburger = document.getElementById('hamburger');
+            const overlay = document.getElementById('nav-overlay');
+            const isOpen = navLinks.classList.contains('open');
+            if (isOpen) {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                overlay.classList.remove('open');
+            } else {
+                navLinks.classList.add('open');
+                hamburger.classList.add('open');
+                overlay.classList.add('open');
+            }
+        }
+
+        function closeMenu() {
+            document.getElementById('nav-links').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('open');
+            document.getElementById('nav-overlay').classList.remove('open');
+        }
     </script>
 </body>
 
